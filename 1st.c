@@ -1,15 +1,17 @@
-#include <stdio.h>  // printf, scanf
-#include <stdlib.h> // random()
+#include <stdio.h>       // printf, scanf 함수 헤더파일
+#include <stdlib.h>      // rand(),srand() 함수 헤더파일
+#include <time.h>        // time 함수 헤더파일
 
 
-int target()
+int target()             //목표함수 설정
 {
-    return random() % 50;
+    srand(time(NULL));   // 난수 생성기 초기값 설정
+    return  rand() % 51; // 난수 발생 0부터 50까지 
 }
 
 int main(void)
 {
-    // 1. setting target 
+     
 
     int num=0;
     int yn=0;
@@ -19,15 +21,15 @@ int main(void)
     do 
     {
         
-        printf("값을 입력해주세요! :");
+        printf("값을 입력해주세요! (0~50) :");
         scanf("%d",&num);
 
 
         if(tgt == num){
-            printf("정답입니다!\n");
-            printf("게임을 계속하겠습니까? (1/0):");
+            printf("정답입니다!\n\n");
+            printf("게임을 계속하겠습니까? (0:종료,1:계속 진행) : "); 
             scanf("%d",&yn);
-            if(yn==1){
+            if(yn==0){
                 printf("게임을 종료합니다.\n");
                 exit(0);
             }else{
