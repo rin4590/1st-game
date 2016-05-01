@@ -24,7 +24,7 @@ int main(void)
 
 
         if(tgt == num){
-            printf("정답입니다!\n");
+            printf("정답입니다!\n\n");
             printf("게임을 계속하겠습니까? (1/0):");
             scanf("%d",&yn);
             if(yn==1){
